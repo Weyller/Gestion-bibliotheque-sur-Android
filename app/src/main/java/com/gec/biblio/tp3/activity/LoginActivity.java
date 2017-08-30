@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
+setTitle("Biblio George-Etienne Cartier");
 
         setContentView(R.layout.activity_login);
         // Set up the login form.

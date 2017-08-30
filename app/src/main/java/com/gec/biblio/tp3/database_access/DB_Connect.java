@@ -15,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class DB_Connect {
@@ -46,7 +47,7 @@ public class DB_Connect {
     private static final String EMAIL = "EmailClient";
 
 
-
+    private static final String prenom = "Weyller";
 
 
    public static Connection DBConnection() {
@@ -100,7 +101,7 @@ public class DB_Connect {
 
             con.setAutoCommit(false);
             Statement stmt = con.createStatement();
-            stmt.executeQuery("use DB_Bibliotheque");
+           // stmt.executeQuery("use DB_Bibliotheque");
 
 
 
@@ -186,25 +187,22 @@ public class DB_Connect {
 
             con.setAutoCommit(false);
             Statement stmt = con.createStatement();
-            stmt.executeQuery("use DB_Bibliotheque");
+           // stmt.executeQuery("use DB_Bibliotheque");
 
 
 
-            String query = "select * from Client where Client.PrClient = 'w'";
+            String query = "select NomClient, PrClient, AdrClient, CelClient, EmailClient from Client where PrClient "  + " = '"+ prenom + "'" + " limit 1 ";
             ResultSet rs = stmt.executeQuery(query);
 
             Client client = new Client();
-            String p = "";
-            status = rs.next();
+
+           //status = rs.next();
             Log.e("LOG_STATUS CLIENT", "Status Client = " + status);
 
             while (rs.next()) {
 
-
-
-
-                client.setPrenom(rs.getString(PRENOM));
                 client.setNom(rs.getString(NOM));
+                client.setPrenom(rs.getString(PRENOM));
                 client.setAdresse(rs.getString(ADDRESS));
                 client.setTelephone(rs.getString(PHONE));
                 client.setEmail(rs.getString(EMAIL));
@@ -212,13 +210,17 @@ public class DB_Connect {
                 //=====================================
 
 
-
                 unClient.add(client);
+
 
             }
 
-            System.out.println(client);
+            System.out.println(unClient);
 
+            for (Client l: unClient
+                 ) { System.out.println(l);
+
+            }
 
 
 
