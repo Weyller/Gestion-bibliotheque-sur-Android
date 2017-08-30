@@ -1,4 +1,4 @@
-package com.gec.biblio.tp3;
+package com.gec.biblio.tp3.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -29,6 +29,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.gec.biblio.tp3.R;
 
 import java.util.ArrayList;
 import java.util.List;

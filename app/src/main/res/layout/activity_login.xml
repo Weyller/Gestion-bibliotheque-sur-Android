@@ -12,7 +12,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
 
     android:weightSum="1"
-    tools:context="com.gec.biblio.tp3.LoginActivity">
+    tools:context="com.gec.biblio.tp3.activity.LoginActivity">
 
     <!-- Login progress -->
     <TextView
@@ -85,9 +85,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:alpha="0.6"
                 android:background="@android:color/background_dark"
-                android:text="@string/action_sign_in"
 
+                android:text="@string/action_sign_in"
                 android:textColor="@android:color/background_light"
                 android:textStyle="bold" />
 
