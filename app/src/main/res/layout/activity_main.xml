@@ -32,7 +32,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:alpha="0.6"
+
         android:background="@android:color/background_dark"
+        android:elevation="24dp"
         android:text="acceder a mes infos"
         android:textColor="@android:color/background_light" />
 
@@ -43,8 +45,9 @@
         android:layout_below="@+id/btnClient"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:alpha="0.6"
-        android:background="@android:color/background_dark"
+        android:alpha="0.8"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="22dp"
         android:text="Voir liste des livres"
         android:textColor="@android:color/background_light" />
 

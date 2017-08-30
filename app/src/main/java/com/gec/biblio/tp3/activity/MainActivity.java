@@ -7,8 +7,10 @@ import android.graphics.Typeface;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -99,6 +101,26 @@ public class MainActivity extends AppCompatActivity {
 
                 // OBJET ADAPTER adapter passe a la listView
                 listView.setAdapter(adapter);
+
+                //--- ANONYMOUS INTERCLASS OBJET LISTVIEW lvChien --------------------------------------------------------
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> adapter, View v, int position, long l)
+                    {
+
+
+                         Livre livres = (Livre) adapter.getItemAtPosition(position);
+                        Log.e("LOG_CAT", "POSITION " +livres.getTitre().toString());
+                        Intent intent = new Intent(MainActivity.this, LivreActivity.class);
+                        intent.putExtra("livres", livres);
+                        startActivity(intent);
+                    }
+                });
+
+
+
+
+
 
 
 
