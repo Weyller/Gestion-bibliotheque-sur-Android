@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 };
                 //-------------------------------------------------------------------------------------------------------
 
-                listView.setBackgroundColor(Color.argb(0,125,154,255));
+                listView.setBackgroundColor(Color.argb(1,125,154,255));
 
                 // OBJET ADAPTER adapter passe a la listView
                 listView.setAdapter(adapter);
@@ -136,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(MainActivity.this, LivreActivity.class);
-                intent.putExtra("livres", listLivre);
+                Intent intent = new Intent(MainActivity.this, ClientActivity.class);
+
                 startActivity(intent);
 
             }

@@ -7,6 +7,7 @@ package com.gec.biblio.tp3.database_access;
 
 import android.util.Log;
 
+import com.gec.biblio.tp3.model.Client;
 import com.gec.biblio.tp3.model.Livre;
 
 import java.sql.Connection;
@@ -37,6 +38,16 @@ public class DB_Connect {
 
 
     //------------------------------
+
+    private static final String PRENOM = "PrClient";
+    private static final String NOM = "NomClient";
+    private static final String ADDRESS = "AdrClient";
+    private static final String PHONE = "CelClient";
+    private static final String EMAIL = "EmailClient";
+
+
+
+
 
    public static Connection DBConnection() {
 
@@ -155,6 +166,84 @@ public class DB_Connect {
 
         return listeLivre;
     }
+
+    //=================================================================================================================
+
+    public static ArrayList<Client> getClient() {
+
+        boolean status = false;
+
+
+        ArrayList<Client> unClient = new ArrayList<>();
+
+
+
+        try {
+
+            con = DBConnection();
+
+            //==================================================
+
+            con.setAutoCommit(false);
+            Statement stmt = con.createStatement();
+            stmt.executeQuery("use DB_Bibliotheque");
+
+
+
+            String query = "select * from Client where Client.PrClient = 'w'";
+            ResultSet rs = stmt.executeQuery(query);
+
+            Client client = new Client();
+            String p = "";
+            status = rs.next();
+            Log.e("LOG_STATUS CLIENT", "Status Client = " + status);
+
+            while (rs.next()) {
+
+
+
+
+                client.setPrenom(rs.getString(PRENOM));
+                client.setNom(rs.getString(NOM));
+                client.setAdresse(rs.getString(ADDRESS));
+                client.setTelephone(rs.getString(PHONE));
+                client.setEmail(rs.getString(EMAIL));
+
+                //=====================================
+
+
+
+                unClient.add(client);
+
+            }
+
+            System.out.println(client);
+
+
+
+
+
+
+
+
+            stmt.close();
+            con.commit();
+            con.close();
+
+
+
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            Log.e("LOG_ERROR", "ERROR requests");
+        }
+
+
+
+        return unClient;
+    }
+
 
 
 }

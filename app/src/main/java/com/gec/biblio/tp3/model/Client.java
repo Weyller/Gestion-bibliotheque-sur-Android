@@ -22,14 +22,12 @@ public class Client implements Serializable{
 
     }
 
-    public Client(int idClient, String nom, String prenom, String adresse, String telephone, String login, String password, String email) {
-        this.idClient = idClient;
+    public Client( String nom, String prenom, String adresse, String telephone, String email) {
+
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.telephone = telephone;
-        this.login = login;
-        this.password = password;
         this.email = email;
     }
 
@@ -96,6 +94,18 @@ public class Client implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 
