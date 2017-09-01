@@ -18,6 +18,7 @@ import com.gec.biblio.tp3.model.Livre;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -229,17 +230,9 @@ public class DB_Connect {
             }
 
 
-
-
-
-
-
             stmt.close();
             con.commit();
             con.close();
-
-
-
 
         }catch (Exception e)
         {
@@ -252,6 +245,49 @@ public class DB_Connect {
         return unClient;
     }
 
+
+    //=================================================================================================================
+
+    public static int saveClient(String cell, String prenom) {
+
+        int status = 0;
+
+        try {
+
+            con = DBConnection();
+
+            //==================================================
+
+            con.setAutoCommit(false);
+            Statement stmt = con.createStatement();
+
+
+//            String query = "UPDATE CLIENT SET CelClient =  '" + cell +"'   WHERE PrClient =  '" + prenom + "'  ";
+//            status = stmt.executeUpdate(query);
+
+            PreparedStatement ps=con.prepareStatement("UPDATE Client SET CelClient = ? WHERE PrClient = ?;");
+            ps.setString(1,cell);
+            ps.setString(2,prenom);
+            status=ps.executeUpdate();
+
+
+            Log.e("LOG_STATUS CLIENT", "Status Client = " + status);
+
+
+            stmt.close();
+            con.commit();
+            con.close();
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            Log.e("LOG_ERROR", "ERROR INSERT");
+        }
+
+
+
+        return status;
+    }
 
 
 }

@@ -192,11 +192,11 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:background="#176ae3"
+            android:background="?attr/colorButtonNormal"
             android:hint="Enter login"
             android:inputType="phone"
             android:lines="0"
-            android:maxLength="11"
+            android:maxLength="15"
             android:paddingBottom="10dp"
             android:paddingLeft="30dp"
             android:paddingTop="10dp"
@@ -242,5 +242,17 @@
             android:textColorHint="#cccccc"
             android:textSize="16sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginTop="20dp
+"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Sauvegarder"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
