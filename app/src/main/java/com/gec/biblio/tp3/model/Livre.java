@@ -1,10 +1,19 @@
+/*
+ * TP3 Base de données II
+ *
+ * @Auteurs
+ *
+ * Weyller Desir
+ * Koffi Joachim
+ * Antoine Robitaille
+ *
+ * */
+
 package com.gec.biblio.tp3.model;
 
 import java.io.Serializable;
 
-/**
- * Created by Administrator on 8/28/2017.
- */
+
 
 public class Livre implements Serializable{
 

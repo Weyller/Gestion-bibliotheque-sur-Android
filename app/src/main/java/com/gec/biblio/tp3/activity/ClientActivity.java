@@ -1,3 +1,14 @@
+/*
+ * TP3 Base de données II
+ *
+ * @Auteurs
+ *
+ * Weyller Desir
+ * Koffi Joachim
+ * Antoine Robitaille
+ *
+ * */
+
 package com.gec.biblio.tp3.activity;
 
 import android.os.StrictMode;

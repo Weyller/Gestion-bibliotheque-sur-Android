@@ -1,9 +1,15 @@
 package com.gec.biblio.tp3.database_access;
 
-/**
- * Created by Administrator on 8/27/2017.
- */
-
+/*
+ * TP3 Base de données II
+ *
+ * @Auteurs
+ *
+ * Weyller Desir
+ * Koffi Joachim
+ * Antoine Robitaille
+ *
+ * */
 
 import android.util.Log;
 

@@ -1,3 +1,14 @@
+/*
+ * TP3 Base de données II
+ *
+ * @Auteurs
+ *
+ * Weyller Desir
+ * Koffi Joachim
+ * Antoine Robitaille
+ *
+ * */
+
 package com.gec.biblio.tp3.activity;
 
 import android.animation.Animator;
@@ -29,6 +40,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gec.biblio.tp3.R;
 
@@ -72,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-setTitle("Biblio George-Etienne Cartier");
+setTitle("Bibliotheque George-Etienne Cartier");
 
         setContentView(R.layout.activity_login);
         // Set up the login form.
@@ -167,6 +179,7 @@ setTitle("Biblio George-Etienne Cartier");
 
         boolean cancel = false;
         View focusView = null;
+
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
@@ -357,6 +370,17 @@ setTitle("Biblio George-Etienne Cartier");
             mAuthTask = null;
             showProgress(false);
         }
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mProgressView.setVisibility(View.INVISIBLE);
+        return;
+
     }
 }
 
