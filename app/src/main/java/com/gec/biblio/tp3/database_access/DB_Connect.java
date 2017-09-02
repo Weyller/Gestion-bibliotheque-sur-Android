@@ -65,7 +65,7 @@ public class DB_Connect {
             Class.forName("com.mysql.jdbc.Driver");
             //
 
-            String url = "jdbc:mysql://10.0.2.2:3306/DB_Bibliotheque";
+            String url = "jdbc:mysql://10.0.2.2:3306/DB_Bibliotheque2";
             con = DriverManager.getConnection(
                     url, "root", "root");
             //
@@ -262,13 +262,13 @@ public class DB_Connect {
             Statement stmt = con.createStatement();
 
 
-//            String query = "UPDATE CLIENT SET CelClient =  '" + cell +"'   WHERE PrClient =  '" + prenom + "'  ";
-//            status = stmt.executeUpdate(query);
+            String query = "UPDATE CLIENT SET CelClient =  '" + cell +"'   WHERE PrClient =  '" + prenom + "'  ";
+            status = stmt.executeUpdate(query);
 
-            PreparedStatement ps=con.prepareStatement("UPDATE Client SET CelClient = ? WHERE PrClient = ?;");
-            ps.setString(1,cell);
-            ps.setString(2,prenom);
-            status=ps.executeUpdate();
+//            PreparedStatement ps=con.prepareStatement("UPDATE Client SET CelClient = ? WHERE PrClient = ?;");
+//            ps.setString(1,cell);
+//            ps.setString(2,prenom);
+//            status=ps.executeUpdate();
 
 
             Log.e("LOG_STATUS CLIENT", "Status Client = " + status);

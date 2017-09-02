@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<Livre> adapter;
     private View mProgressView;
+    //Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Access Client");
 
         setContentView(R.layout.activity_main);
-
 
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // OBJET ADAPTER adapter passe a la listView
                 listView.setAdapter(adapter);
+
 
                 //--- ANONYMOUS INTERCLASS OBJET LISTVIEW lvChien --------------------------------------------------------
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -218,7 +219,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         mProgressView.setVisibility(View.INVISIBLE);
-
 
 
 
