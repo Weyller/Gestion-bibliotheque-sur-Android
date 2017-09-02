@@ -11,6 +11,7 @@
 
 package com.gec.biblio.tp3.activity;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -81,7 +82,7 @@ public class ClientActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int resultat = DB_Connect.saveClient(cellText,p);
+                int resultat = DB_Connect.saveClient(cell.getText().toString(),p);
 
                 Log.e("LOG STATUS CELL", "MY STATUS: " + resultat);
                 if (resultat == 1) {
@@ -93,6 +94,16 @@ public class ClientActivity extends AppCompatActivity {
             }
         });
 
+    }
+    //------------------------------
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(ClientActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

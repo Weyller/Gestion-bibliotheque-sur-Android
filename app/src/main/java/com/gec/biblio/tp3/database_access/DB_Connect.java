@@ -125,7 +125,7 @@ public class DB_Connect {
                     " livreedition.IdEditeur = editeur.IdEditeur ";
             ResultSet rs = stmt.executeQuery(query);
 
-            status = rs.next();
+
 
             while (rs.next()) {
 
