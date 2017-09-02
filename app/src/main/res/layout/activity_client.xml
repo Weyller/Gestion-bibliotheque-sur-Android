@@ -30,7 +30,8 @@
             android:paddingLeft="10dp"
             android:paddingTop="8dp"
             android:src="@drawable/face"
-            android:layout_weight="0.01" />
+            android:layout_weight="0.01"
+            tools:ignore="RtlSymmetry" />
 
 
 
